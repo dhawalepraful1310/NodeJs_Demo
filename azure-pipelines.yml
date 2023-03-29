@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: Test_nodeJs
 
 steps:
 - task: NodeTool@0
