@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: Test_nodeJs
+  vmImage: Test_Nodeapp
 
 steps:
 - task: NodeTool@0
