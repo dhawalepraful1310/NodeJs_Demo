@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  name: Test_Nodeapp
+  name: node_testapp
 
 steps:
 - task: NodeTool@0
