@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  test-node
+  test_node
 
 steps:
 - task: NodeTool@0
