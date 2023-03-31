@@ -11,7 +11,7 @@ pool:
 resources:
 - repo: self
 variables:
-  imageRepository: 'https://github.com/dhawalepraful1310/NodeJs_Demo.git'
+  # imageRepository: 'https://github.com/dhawalepraful1310/NodeJs_Demo.git'
   containerRegistry: 'nodedeployapp.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   dockerRegistryServiceConnection: '1964360c-68cd-442c-a83b-68c7a0218a6f'
@@ -22,7 +22,7 @@ steps:
   displayName: Build and push an image to container registry
   inputs:
     command: buildAndPush
-    repository: $(imageRepository)
+    # repository: $(imageRepository)
     dockerfile: $(dockerfilePath)
     containerRegistry: $(dockerRegistryServiceConnection)
     tags: |
