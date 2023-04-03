@@ -12,9 +12,9 @@ resources:
 - repo: self
 variables:
   # imageRepository: 'https://github.com/dhawalepraful1310/NodeJs_Demo.git'
-  containerRegistry: 'nodedeployapp.azurecr.io'
+  containerRegistry: 'reactdemo1.azurecr.io'
   dockerfilePath: '**/Dockerfile'
-  dockerRegistryServiceConnection: '1964360c-68cd-442c-a83b-68c7a0218a6f'
+  dockerRegistryServiceConnection: 'bbb7a5e7-c1ee-4d6d-a292-78d5f0f49cfc'
   tag: '$(Build.BuildId)'
 
 steps:
