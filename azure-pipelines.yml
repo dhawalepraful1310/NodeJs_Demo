@@ -38,30 +38,30 @@ stages:
         tags: |
           $(tag)
 
-- stage: Deploy
-  displayName: Deploy stage
-  dependsOn: Build
+# - stage: Deploy
+#   displayName: Deploy stage
+#   dependsOn: Build
 
 
-  jobs:
-    - deployment: Deploy
-      displayName: Deploy
-      pool:
-        Task_NodeJs
+#   jobs:
+#     - deployment: Deploy
+#       displayName: Deploy
+#       pool:
+#         Task_NodeJs
       
-      strategy:
-        runOnce:
-          deploy:
-            steps:
-            - task: KubernetesManifest@0
-              displayName: Create imagePullSecret
-              inputs:
-                action: createSecret
-                secretName: $(imagePullSecret)
-                dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
-            - task: KubernetesManifest@0
-              inputs:
-                action: 'deploy'
-                kubernetesServiceConnection: 'Deploy-Digi-sh-test-demo'
-                namespace: 'NodeJs_Test_Deploy_task'
-                manifests: 'deployment'
+#       strategy:
+#         runOnce:
+#           deploy:
+#             steps:
+#             - task: KubernetesManifest@0
+#               displayName: Create imagePullSecret
+#               inputs:
+#                 action: createSecret
+#                 secretName: $(imagePullSecret)
+#                 dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
+#             - task: KubernetesManifest@0
+#               inputs:
+#                 action: 'deploy'
+#                 kubernetesServiceConnection: 'Deploy-Digi-sh-test-demo'
+#                 namespace: 'NodeJs_Test_Deploy_task'
+#                 manifests: 'deployment'
