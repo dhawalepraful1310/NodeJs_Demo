@@ -37,4 +37,11 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+          
 
+    - task: KubernetesManifest@0
+      inputs:
+        action: 'deploy'
+        kubernetesServiceConnection: 'Deploy-Digi-sh-test-demo'
+        namespace: 'NodeJs_Test_Deploy_task'
+        manifests: 'deployment'
